@@ -1,0 +1,28 @@
+Editor vetorial utilizado: corelDraw x7
+
+Operações
+
+1- seleção dos objetos,mover, escalar, esticar objetos, zoom, ferramenta de forma, ferramenta de corte, camadas.
+
+Ferramenta de forma 
+
+Permite a remodelagem do objeto acrescentando pontos de nós. Cada tipo de objeto oferece um conjunto especializado de métodos de modelagem, por exemplo um retangulo possuí 4 pontos no minimo de nós, mas com essa ferramenta podemos acrescentar mais nós para manipular a forma do objeto.
+
+ferramenta cortar 
+
+permite selecionar uma area para realizar o corte em bitmaps e objetos vetoriais. Exemplo podemos selecionar uma area retangular e tudo que está fora dessa area será "apagado".
+
+camadas
+
+Permite que não haja colisão entre os objetos, ou seja, um pode se sobrepor ao outro como por exemplo um texto pode estar "em cima" de um retangulo.
+
+
+2 - Os atributos compartilhados entre as figuras geometricas são: cor de preenchimento, redimencionamento das figuras, inserção de nós,rotação das figuras e transparencia das figuras. 
+
+3 - Os atributos especificos das figuras retangulo, elipse e seta respectivamente são: Redimencionamento arredondado do quadrado, corte em forma de torta na elipse e variedade de modelos de seta predefinidos.
+O primeiro permite suavizar as arestas do quadrado formando meio que um balão de um dialogo, o segundo permite definir pedaços de pizza por exemplo e o ultimo podemos definir a quantidade de setas e as suas respectivas direções.  
+
+4 - Está no slide. 
+
+ 
+ 
