@@ -1,0 +1,11 @@
+Neste programa temos uma classe Rect(retangulo) que é responsável mapear as coordenadas de um retângulo. As propriedades x e y correspondem a sua largura e altura, respectivamente, em relação ao local em pixeis da figura, ou seja, suponha uma janela de 400 pixeis de largura e altura, se definirmos x e y como 200, o primeiro ponto (da esquerda para a direita em relação a x) e (de cima para baixo em relação a y) estará no centro da janela. Por outro lado, a largura(w) e altura(h) do objeto é definido através dessas propriedades, ou seja, quanto maior o w por exemplo, mais largo será o retangulo e o mesmo vale para a altura, mas note que o ponto inicial x e y ainda estará alinhado ao centro em relação ao tamanho da janela. Supondo por exemplo, que desejamos "aumentar" o w, o retangulo vai "crescer" a partir do ponto fixado, isto é, da esquerda para a direita.
+
+Para melhor compreensão segue um esboço no paint sobre o que seria cada informação.
+
+Dentro da classe rect ainda, temos um construtor responsável por receber os parâmetros e atribuir as variáveis.
+
+Temos também um método print responsável por imprimir essas propriedades. 
+
+No programa principal (main) temos a declaração da classe retângulo, lembrando um pouco como fazemos para declarar os tipos primitivos, porém essa classe acabamos de criar, em seguida instanciamos através da palavra new o retângulo com as suas respectivas propriedades. Note que quando instanciamos, isto é, utilizar a palavra reservada "new" significa para o java que estamos alocando o programa em memoria. Após isso utilizamos o método print para imprimir as propriedades desse objeto r1.
+
+https://github.com/Lucasalbertoaquino/LP2/tree/main/04%20-%20classes/4-2%20-%20Considere%20um%20programa%20em%20java
