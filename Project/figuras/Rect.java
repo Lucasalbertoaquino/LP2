@@ -2,7 +2,7 @@ package figuras;
 
 import java.awt.*;
 
-public class Rect {
+public class Rect extends Figure {
     int x, y;
     int w, h;
     int rf,gf,bf; 

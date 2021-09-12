@@ -2,7 +2,7 @@ package figuras;
 
 import java.awt.*;
 
-public class Triangulo{
+public class Triangulo extends Figure{
     int x1,x2,x3;
     int y1,y2,y3;
     int rf,gf,bf;//fundo
