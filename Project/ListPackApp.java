@@ -59,15 +59,15 @@ class ListPackFrame extends JFrame{
                     if((evt.getKeyChar() == 's')|| (evt.getKeyChar() =='S')){
                         int x = rand.nextInt(350);
                         int y = rand.nextInt(350);
-                        int w = rand.nextInt(50);
-                        int h = rand.nextInt(50);
+                        //System.out.printf("%d:%d\n",x,y);
                         int rf = rand.nextInt(255);//define a cor de 256 bits
                         int gf = rand.nextInt(255);
                         int bf = rand.nextInt(255);
                         int rl = rand.nextInt(255);
                         int gl = rand.nextInt(255);
                         int bl = rand.nextInt(255);
-                        figs.add(new Estrela(x,x-50,x/2,x-70,x-100,x,x+100,x+70,x+150,x+50,y,y*2,y*2,y+180,y*4,y+240,y*4,y+180,y*2,y*2,rf,gf,bf,rl,gl,bl));
+                        //figs.add(new Estrela(x,x-50,x/2,x-70,x-100,x,x+100,x+70,x+150,x+50,y,y*2,y*2,y+180,y*4,y+240,y*4,y+180,y*2,y*2,rf,gf,bf,rl,gl,bl));
+                        figs.add(new Estrela(x,x-50,x/2,x-70,x-100,x,x+100,x+70,x+150,x+50,y/3,y-100,y-100,y-20,y+100,y+40,y,y-20,y-100,y-100,rf,gf,bf,rl,gl,bl));
                     }
                     else if((evt.getKeyChar() == 't')|| (evt.getKeyChar() == 'T')){
                         int x = rand.nextInt(350);//varia de 0 a 350

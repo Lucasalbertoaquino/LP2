@@ -3,10 +3,8 @@ package figuras;
 import java.awt.*;
 
 public class Estrela extends Figure{
-    int x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
-    int y1,y2,y3,y4,y5,y6,y7,y8,y9,y10;
-    int rf,gf,bf;//fundo
-    int rl,gl,bl;//linha
+    int x2,x3,x4,x5,x6,x7,x8,x9,x10;
+    int y2,y3,y4,y5,y6,y7,y8,y9,y10;
 
     public Estrela(int x1,int x2,int x3,int x4,int x5,int x6,int x7,int x8,int x9,int x10,int y1,int y2,int y3,int y4,int y5,int y6,int y7,int y8,int y9,int y10,int rf,int gf,int bf,int rl,int gl,int bl){ 
         this.x1 = x1;

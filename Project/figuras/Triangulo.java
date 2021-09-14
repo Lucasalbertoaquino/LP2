@@ -3,10 +3,8 @@ package figuras;
 import java.awt.*;
 
 public class Triangulo extends Figure{
-    int x1,x2,x3;
-    int y1,y2,y3;
-    int rf,gf,bf;//fundo
-    int rl,gl,bl;//linha
+    int x2,x3;
+    int y2,y3;
 
     public Triangulo(int x1,int x2,int x3,int y1,int y2,int y3,int rf,int gf,int bf,int rl,int gl,int bl){
         this.x1 = x1;

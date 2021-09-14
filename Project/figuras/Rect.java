@@ -3,14 +3,11 @@ package figuras;
 import java.awt.*;
 
 public class Rect extends Figure {
-    int x, y;
     int w, h;
-    int rf,gf,bf; 
-    int rl,gl,bl;
-
-    public Rect (int x, int y, int w, int h,int rf,int gf,int bf, int rl, int gl,int bl) {
-        this.x = x;
-        this.y = y;
+    
+    public Rect (int x1, int y1, int w, int h,int rf,int gf,int bf, int rl, int gl,int bl) {
+        this.x1 = x1;
+        this.y1 = y1;
         this.w = w;
         this.h = h;
         this.rf = rf;
@@ -23,16 +20,16 @@ public class Rect extends Figure {
 
     void print () {
         System.out.format("Retangulo de tamanho (%d,%d) na posicao (%d,%d).\n",
-            this.w, this.h, this.x, this.y);
+            this.w, this.h, this.x1, this.y1);
     }
 
     public void paint (Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
 
         g2d.setColor(new Color(this.rf,this.gf,this.bf));
-        g2d.fillRect(this.x,this.y,this.w,this.h);
+        g2d.fillRect(this.x1,this.y1,this.w,this.h);
         g2d.setColor(new Color(this.rl,this.gl,this.bl));
-        g2d.drawRect(this.x,this.y, this.w,this.h);
+        g2d.drawRect(this.x1,this.y1, this.w,this.h);
 
     }
 }
