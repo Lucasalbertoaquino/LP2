@@ -15,6 +15,7 @@ class ListPackApp{
 }
 class ListPackFrame extends JFrame{
     ArrayList<Figure> figs = new ArrayList<Figure>();
+    Figure focus = null;
     Random rand = new Random();// gera numeros aleatorios
 
     ListPackFrame(){
@@ -86,6 +87,44 @@ class ListPackFrame extends JFrame{
                 }
             }
         );
+
+        this.addMouseListener(
+            new MouseAdapter(){
+                public void mousePressed(MouseEvent evt){
+                    for(Figure fig: figs){
+                        int mx = evt.getX();
+                        int my = evt.getY();
+                        int p1 = fig.x1 + fig.w;
+                        int p2 = fig.y1 + fig.h;
+                        
+                        if(((mx >= fig.x1) &&(mx <= p1))&&((my >= fig.y1)&&(my <= p2))){
+                            //System.out.println("Acertei");
+                            focus = fig;
+                        }
+                    }
+                }
+            }
+
+        );
+
+        this.addMouseMotionListener(
+            new MouseMotionAdapter(){
+                public void mouseDragged(MouseEvent evt){
+                    for(Figure fig: figs){
+                        int dx = evt.getX();
+                        int dy = evt.getY();
+                        if(focus != null){
+                            fig.x1 = dx;
+                            fig.y1 = dy;
+                            repaint();
+                        }
+                    }
+                }
+            }
+
+        );
+
+
         this.setTitle("lista de retangulos + elipse + triangulo + star");
         this.setSize(350,350);
     }
@@ -94,6 +133,8 @@ class ListPackFrame extends JFrame{
         super.paint(g);
         for(Figure fig: this.figs){
             fig.paint(g);
+            fig.print();
         }
     }
+
 }
