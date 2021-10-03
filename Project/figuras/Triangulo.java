@@ -7,6 +7,7 @@ public class Triangulo extends Figure{
     int y2,y3;
 
     public Triangulo(int x1,int x2,int x3,int y1,int y2,int y3,int rf,int gf,int bf,int rl,int gl,int bl){
+        super();
         this.x1 = x1;
         this.x2 = x2;
         this.x3 = x3;
