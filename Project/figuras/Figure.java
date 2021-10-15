@@ -29,5 +29,4 @@ public abstract class Figure{
         this.bf = b;
     }
 
-
 }
