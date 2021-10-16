@@ -1,0 +1,87 @@
+1. wearable(shirt,pants,jacket)
+//e.g"vestivel"-> camisa,calça,casaco 
+
+Metodo 1
+
+wear(vestir algo,tamanho)
+//e.g vestir (casaco, tamanho M)
+
+metodo 2
+
+undress(tirar algo,tamanho)
+//e.g tirar (camisa,tamanho GG)
+
+sintaxe
+
+interface wearable{
+    void wear(int tam);
+    void undress(int tam);
+}
+
+class pants implements wearable{
+    void wear(int tam){
+        ....
+    }
+    void undress(int tam){
+        ...
+    }
+}
+class shirt implements wearable{
+    void wear(int tam){
+        ....
+    }
+    void undress(int tam){
+        ...
+    }
+}
+class jacket implements wearable{
+    void wear(int tam){
+        ....
+    }
+    void undress(int tam){
+        ...
+    }
+}
+-----------------------------------------------------------------------
+2.controllable/dirigible(car,truck,ship)
+//e.g dirigivel/guiavel/controlavel -> carro,caminhão,navio
+
+Metodo 1
+turn(virar,angulo,sentido)
+//e.g vire(o volante, 45 graus, a esquerda)
+
+metodo 2
+accelerate(direção,velocidade)
+//e.g acelerar(para o norte,a 45 km/h)
+
+sintaxe
+
+interface controllable{
+    void turn(int ang,int sent);
+    void accelerate(char dir,int vel);
+}
+
+class car implements controllable{
+    void turn(int ang,int sent){
+        ...
+    }
+    void accelerate(char dir,int vel){
+        ...
+    }
+}
+class truck implements controllable{
+    void turn(int ang,int sent){
+        ...
+    }
+    void accelerate(char dir,int vel){
+        ...
+    }
+} 
+class ship implements controllable{
+    void turn(int ang,int sent){
+        ...
+    }
+    void accelerate(char dir,int vel){
+        ...
+    }
+}  
