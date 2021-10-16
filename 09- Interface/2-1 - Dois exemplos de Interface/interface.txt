@@ -1,15 +1,17 @@
-1. wearable(shirt,pants,jacket)
+﻿1. wearable(shirt,pants,jacket)
 //e.g"vestivel"-> camisa,calça,casaco 
 
 Metodo 1
 
 wear(vestir algo,tamanho)
 //e.g vestir (casaco, tamanho M)
+//veste um objeto de um determinado tamanho
 
 metodo 2
 
 undress(tirar algo,tamanho)
 //e.g tirar (camisa,tamanho GG)
+//tira o objeto de um determinado tamanho
 
 sintaxe
 
@@ -49,10 +51,12 @@ class jacket implements wearable{
 Metodo 1
 turn(virar,angulo,sentido)
 //e.g vire(o volante, 45 graus, a esquerda)
+//vira o objeto a determinado angulo e sentido
 
 metodo 2
 accelerate(direção,velocidade)
 //e.g acelerar(para o norte,a 45 km/h)
+//acelera o objeto a uma direção e determinada velocidade
 
 sintaxe
 
