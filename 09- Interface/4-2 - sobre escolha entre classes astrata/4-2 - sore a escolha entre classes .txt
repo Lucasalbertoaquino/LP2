@@ -1,0 +1,74 @@
+Uso de classes abstratas X interfaces
+ 
+1. Classe abstrata (use um substantivo):
+uerjiano is pessoa 
+
+a. caso representativo
+Um uso para classes seria, por exemplo para registro no sistema da universidade.
+
+b. justificativa
+
+Para o uso da classe precisamos herdar de uma classe pessoa, pois toda pessoa sendo da uerj ou não, precisa ter esses atributos no brasil.
+
+c. esboço do código
+
+public class abstract Pessoa{
+  public String nome;
+  public int idade;
+  public int cpf;
+  public int rg;
+}
+
+d. dê exemplos de subclasses
+
+public class uerjiano extends pessoa{
+  private int id
+  public String matricula;
+}
+
+public class Aluno extends uerjiano{
+  public string curso;
+  public int CR;
+}
+public class Aluno extends uerjiano{
+  public string certificadoMec;
+}
+
+2. Interface (use um adjetivo):
+
+Hidroaviao behave as comandosAviao,comandosBarco
+
+a. caso representativo
+
+Para Interfaces a utilização de um transporte que se comporta com outros, por exemplo um Hidroavião se comporta como um aviao e pode pousar e decolar na agua.
+
+b. justificativa
+
+Nesse exemplo, o hidroavião precisa ter suas proprias implementações, pois não pode herdar de uma unica classe já que possuí comportamentos especiais de um aviao e barco ao mesmo tempo. 
+
+c. esboço do código
+
+public interface ComandosAviao{
+...
+public void subir();
+...
+}
+
+public interface ComandosBarco{
+...
+public void ancorar();
+...
+}
+
+d. dê exemplos de classes que a implementam
+
+public class HidroAviao extends Transporte implements ComandosAviao,comandosBarco{
+...
+public void subir(){
+...
+}
+public void ancorar(){
+...
+}
+...
+}
