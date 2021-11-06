@@ -8,14 +8,14 @@ import java.awt.Graphics;
 import ivisible.IVisible;
 
 public abstract class Figure implements IVisible{
-    public int x1, y1;
+    int x1, y1;
     public int w, h;
-    public int mx,my;
+    private int mx,my;
 
-    int rf,gf,bf;//fundo
-    int rl,gl,bl;//linha
+    protected int rf,gf,bf;//fundo
+    protected int  rl,gl,bl;//linha
     public abstract void paint(Graphics g);
-    //public abstract void print();
+    public abstract void print();
     public void drag(int dx, int dy){
         this.x1 = dx;
         this.y1 = dy;

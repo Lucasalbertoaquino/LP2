@@ -166,8 +166,8 @@ class IfaceFrame extends JFrame{
                         int rl = 0;
                         int gl = 0;
                         int bl = 0;
-                        figs.add(new Triangulo(x,y,w,h,x,y,rf,gf,bf,rl,gl,bl));
-                        //figs.add(new Triangulo(100,10,200,100,150,180,rf,gf,bf,rl,gl,bl));
+                        //figs.add(new Triangulo(x,y,w,h,x,y,rf,gf,bf,rl,gl,bl));
+                        figs.add(new Triangulo(100,10,200,100,150,180,rf,gf,bf,rl,gl,bl));
                     }
                     if((evt.getKeyChar() == 'g')|| (evt.getKeyChar() == 'G')){
                         System.out.printf("*****Inserir cores do Triangulo manualmente*****\n");
@@ -267,11 +267,11 @@ class IfaceFrame extends JFrame{
         this.setSize(350,350);
     }
 
-    public void paint (Graphics g){
+   public void paint (Graphics g){
         super.paint(g);
         for(Figure fig: this.figs){
             fig.paint(g);
-            //fig.print();
+            fig.print();
         }
     }
 
