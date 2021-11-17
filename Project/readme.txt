@@ -8,7 +8,7 @@ Criando figuras
 -G ou g -> cria o triangulo com a entrada das cores manual
 -E ou e -> cria elipse
 -D ou d -> cria a elipse com a entrada das cores manual
----S ou s -> cria estrela---
+<s>S ou s -> cria estrela</s>
 ---W ou w -> cria a estrela com a entrada das cores manual---
 
 removendo figuras...
