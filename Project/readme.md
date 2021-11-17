@@ -1,28 +1,28 @@
-Figuras disponiveis: Retângulo, elipse,triangulo, estrela
+Figuras disponiveis: Retângulo, elipse,triangulo, estrela<br />
 
-Criando figuras
+Criando figuras<br />
 
--R ou r -> cria retangulo
--F ou f -> cria o retangulo com a entrada das cores manual
--t ou t -> cria triangulo
--G ou g -> cria o triangulo com a entrada das cores manual
--E ou e -> cria elipse
--D ou d -> cria a elipse com a entrada das cores manual
-<s>S ou s -> cria estrela</s>
----W ou w -> cria a estrela com a entrada das cores manual---
+-R ou r -> cria retangulo<br />
+-F ou f -> cria o retangulo com a entrada das cores manual<br />
+-t ou t -> cria triangulo<br />
+-G ou g -> cria o triangulo com a entrada das cores manual<br />
+-E ou e -> cria elipse<br />
+-D ou d -> cria a elipse com a entrada das cores manual<br />
+<s>S ou s -> cria estrela</s><br />
+<s>W ou w -> cria a estrela com a entrada das cores manual</s>
+<br />
+removendo figuras...<br />
 
-removendo figuras...
+-clicar em cima da figura e apertar a tecla delete(del)<br />
 
--clicar em cima da figura e apertar a tecla delete(del)
+arrastando figuras...<br />
 
-arrastando figuras...
+-clique e arraste a figura que deseja mover<br />
 
--clique e arraste a figura que deseja mover
+Alterando a cor das figuras....<br />
 
-Alterando a cor das figuras....
+-Clique com o botão direito do mouse em qualquer figura para configurar as cores da mesma.<br />
 
--Clique com o botão direito do mouse em qualquer figura para configurar as cores da mesma.
-
-*O programa salva em um arquivo binario a ultima execução.
-**Estrela ainda em desenvolvivemento, sendo assim descidi não implementar ainda.
+*O programa salva em um arquivo binario a ultima execução.<br />
+**Estrela ainda em desenvolvivemento, sendo assim descidi não implementar ainda.<br />
 
