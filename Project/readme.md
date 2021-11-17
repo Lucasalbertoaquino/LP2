@@ -10,7 +10,10 @@ Criando figuras<br />
 -D ou d -> cria a elipse com a entrada das cores manual<br />
 <s>S ou s -> cria estrela</s><br />
 <s>W ou w -> cria a estrela com a entrada das cores manual</s>
-<br /><br />
+<br />
+-Clique no botão correspodente<br />
+**O ultimo botão retira a seleção do botão, ou seja não cria nenhuma figura por isso está vazio<br />
+<br />
 removendo figuras...<br />
 
 -clicar em cima da figura e apertar a tecla delete(del)<br />
