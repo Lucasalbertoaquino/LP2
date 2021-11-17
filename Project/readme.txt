@@ -8,8 +8,8 @@ Criando figuras
 -G ou g -> cria o triangulo com a entrada das cores manual
 -E ou e -> cria elipse
 -D ou d -> cria a elipse com a entrada das cores manual
--S ou s -> cria estrela
--W ou w -> cria a estrela com a entrada das cores manual
+---S ou s -> cria estrela---
+---W ou w -> cria a estrela com a entrada das cores manual---
 
 removendo figuras...
 
@@ -22,3 +22,7 @@ arrastando figuras...
 Alterando a cor das figuras....
 
 -Clique com o botão direito do mouse em qualquer figura para configurar as cores da mesma.
+
+*O programa salva em um arquivo binario a ultima execução.
+**Estrela ainda em desenvolvivemento, sendo assim descidi não implementar ainda.
+
