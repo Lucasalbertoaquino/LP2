@@ -11,7 +11,7 @@ Criando figuras<br />
 <s>S ou s -> cria estrela</s><br />
 <s>W ou w -> cria a estrela com a entrada das cores manual</s><br />
 <br />
--Clique no botão correspodente<br />
+Clique no botão correspodente<br />
 **O ultimo botão retira a seleção do botão, ou seja não cria nenhuma figura por isso está vazio<br />
 <br />
 removendo figuras...<br />
