@@ -17,17 +17,23 @@ class IfaceApp{
 }
 class IfaceFrame extends JFrame{
     ArrayList<Figure> figs = new ArrayList<Figure>();
-    Figure focus = null;
+    Figure focus = null; 
     Random rand = new Random();// gera numeros aleatorios
     Scanner teclado = new Scanner(System.in);
     String s;//pergunta s/n
 
     int xm,ym; //coordenadas mause atual
 
+    int xt,yt;
+
+    Button focus_but = null;
+
+    ArrayList<Button> buts = new ArrayList<Button>();
     
     
 
     IfaceFrame(){
+
         this.addWindowListener(
             new WindowAdapter(){
                 public void windowClosing(WindowEvent e){
@@ -35,6 +41,11 @@ class IfaceFrame extends JFrame{
                 }
             }
         );
+
+        buts.add(new Button(0,new Rect(40,60,30,30,0,0,0,0,0,0)));
+        buts.add(new Button(1,new Ellipse(40,60,30,30,0,0,0,0,0,0)));
+        buts.add(new Button(2,new Triangulo(40,60,30,30,0,0,0,0,0,0)));
+
 
         this.addKeyListener(
             new KeyAdapter(){
@@ -80,7 +91,8 @@ class IfaceFrame extends JFrame{
                         Rect r = new Rect(x,y,w,h,rf,gf,bf,rl,gl,bl);
                         figs.add(r);
                         teclado.nextLine();//limpa o buffer
-                    }                                
+                    }
+                                                    
                     if((evt.getKeyChar() == 'e')||(evt.getKeyChar() == 'E')){
                         int x = xm; //recebe a coordenada x do mouse
                         int y = ym; // recebe a coordenada y do mouse
@@ -118,7 +130,7 @@ class IfaceFrame extends JFrame{
                         }
                         figs.add(new Ellipse(x,y,w,h,rf,gf,bf,rl,gl,bl));
                         teclado.nextLine();//limpa o buffer   
-                    }
+                    }/*
                     if((evt.getKeyChar() == 's')|| (evt.getKeyChar() =='S')){
                         int x = xm; //recebe a coordenada x do mouse
                         int y = ym; // recebe a coordenada y do mouse
@@ -154,7 +166,7 @@ class IfaceFrame extends JFrame{
                         //figs.add(new Estrela(x,x-50,x/2,x-70,x-100,x,x+100,x+70,x+150,x+50,y,y*2,y*2,y+180,y*4,y+240,y*4,y+180,y*2,y*2,rf,gf,bf,rl,gl,bl));
                         figs.add(new Estrela(x,x-50,x/2,x-70,x-100,x,x+100,x+70,x+150,x+50,y/3,y-100,y-100,y-20,y+100,y+40,y,y-20,y-100,y-100,rf,gf,bf,rl,gl,bl));
                         teclado.nextLine();//limpa o buffer
-                    }
+                    }*/
                     if((evt.getKeyChar() == 't')|| (evt.getKeyChar() == 'T')){
                         int x = xm; //recebe a coordenada x do mouse
                         int y = ym; // recebe a coordenada y do mouse
@@ -166,8 +178,8 @@ class IfaceFrame extends JFrame{
                         int rl = 0;
                         int gl = 0;
                         int bl = 0;
-                        //figs.add(new Triangulo(x,y,w,h,x,y,rf,gf,bf,rl,gl,bl));
-                        figs.add(new Triangulo(100,10,200,100,150,180,rf,gf,bf,rl,gl,bl));
+                        figs.add(new Triangulo(x,y,w,h,rf,gf,bf,rl,gl,bl));
+                        //figs.add(new Triangulo(100,10,200,150,rf,gf,bf,rl,gl,bl));
                     }
                     if((evt.getKeyChar() == 'g')|| (evt.getKeyChar() == 'G')){
                         System.out.printf("*****Inserir cores do Triangulo manualmente*****\n");
@@ -191,7 +203,7 @@ class IfaceFrame extends JFrame{
                             gf = 0;
                             bf = 0;
                         }
-                        figs.add(new Triangulo(x,y,w,h,x,y,rf,gf,bf,rl,gl,bl));
+                        figs.add(new Triangulo(x,y,w,h,rf,gf,bf,rl,gl,bl));
                         teclado.nextLine(); //limpa o buffer
                     }
                     if((evt.getKeyChar() == 127)&&(focus != null)){
@@ -209,6 +221,7 @@ class IfaceFrame extends JFrame{
             }
         );
 
+
         this.addMouseListener(
             new MouseAdapter(){
                 public void mousePressed(MouseEvent evt){
@@ -223,18 +236,39 @@ class IfaceFrame extends JFrame{
                             fig.foco(0,0,0);
                         }
                     }
+
                 }
                 public void mouseClicked(MouseEvent evt){
                     int mx = evt.getX();
                     int my = evt.getY();
+                    int b = evt.getButton();
                     for(Figure fig: figs){
                         if(fig.clicked(mx,my)){
-                            fig.foco(255,0,0); //coloca o foco em vermelho
+                            fig.foco(255,0,0); //coloca o foco em vermelho 
+                            if(b == 3){
+                                System.out.println("***Troca de cores***");
+                                System.out.printf("R: ");
+                                int rf = teclado.nextInt();
+                                System.out.printf("G: "); 
+                                int gf = teclado.nextInt();
+                                System.out.printf("B: ");
+                                int bf = teclado.nextInt();
+                                if((rf < 0 || rf > 255)||(gf < 0|| gf > 255)||(bf < 0 ||bf > 255)){
+                                    System.out.println("***Voce inseriu um canal de cores invalido***");
+                                    System.out.println("Por definicao sera inserida uma figura padrao!!!\n");
+                                    rf = 0;
+                                    gf = 0;
+                                    bf = 0;
+                                }
+                                teclado.nextLine(); //limpa o buffer
+                                fig.cor(rf,gf,bf);
+                            }
                             
                         }
                         else{
                             fig.foco(0,0,0);
                         }
+                        
                     }
                     repaint();
                 }
@@ -270,9 +304,12 @@ class IfaceFrame extends JFrame{
    public void paint (Graphics g){
         super.paint(g);
         for(Figure fig: this.figs){
-            fig.paint(g);
+            fig.paint(g,true);
             fig.print();
         }
+        for(Button but: this.buts){
+            but.paint(g,but == focus_but);
+        }
+    
     }
-
 }
