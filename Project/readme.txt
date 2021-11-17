@@ -1,4 +1,4 @@
-Figuras disponiveis: Ret�ngulo, elipse,triangulo, estrela
+Figuras disponiveis: Retângulo, elipse,triangulo, estrela
 
 Criando figuras
 
@@ -18,3 +18,7 @@ removendo figuras...
 arrastando figuras...
 
 -clique e arraste a figura que deseja mover
+
+Alterando a cor das figuras....
+
+-Clique com o botão direito do mouse em qualquer figura para configurar as cores da mesma.
