@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 import java.lang.String;
+import java.io.*;
 
 import figuras.*;
 
@@ -29,14 +30,31 @@ class IfaceFrame extends JFrame{
     Button focus_but = null;
 
     ArrayList<Button> buts = new ArrayList<Button>();
-    
-    
+
+    int fixai = -1;//fixa o index 
+
 
     IfaceFrame(){
+        try{
+            FileInputStream f = new FileInputStream("proj.bin");
+            ObjectInputStream o = new ObjectInputStream(f);
+            this.figs = (ArrayList <Figure>) o.readObject();
+            o.close();
+        }catch (Exception x){
+            System.out.println("Erro!");
+        }
+
 
         this.addWindowListener(
             new WindowAdapter(){
                 public void windowClosing(WindowEvent e){
+                    try{
+                        FileOutputStream f = new FileOutputStream("proj.bin");
+                        ObjectOutputStream o = new ObjectOutputStream(f);
+                        o.writeObject(figs);
+                        o.flush();
+                        o.close();
+                    }catch (Exception x){}
                     System.exit(0);
                 }
             }
@@ -45,6 +63,7 @@ class IfaceFrame extends JFrame{
         buts.add(new Button(0,new Rect(40,60,30,30,0,0,0,0,0,0)));
         buts.add(new Button(1,new Ellipse(40,60,30,30,0,0,0,0,0,0)));
         buts.add(new Button(2,new Triangulo(40,60,30,30,0,0,0,0,0,0)));
+        buts.add(new Button(3,new Lineb()));
 
 
         this.addKeyListener(
@@ -179,7 +198,6 @@ class IfaceFrame extends JFrame{
                         int gl = 0;
                         int bl = 0;
                         figs.add(new Triangulo(x,y,w,h,rf,gf,bf,rl,gl,bl));
-                        //figs.add(new Triangulo(100,10,200,150,rf,gf,bf,rl,gl,bl));
                     }
                     if((evt.getKeyChar() == 'g')|| (evt.getKeyChar() == 'G')){
                         System.out.printf("*****Inserir cores do Triangulo manualmente*****\n");
@@ -242,6 +260,7 @@ class IfaceFrame extends JFrame{
                     int mx = evt.getX();
                     int my = evt.getY();
                     int b = evt.getButton();
+                    
                     for(Figure fig: figs){
                         if(fig.clicked(mx,my)){
                             fig.foco(255,0,0); //coloca o foco em vermelho 
@@ -269,6 +288,31 @@ class IfaceFrame extends JFrame{
                             fig.foco(0,0,0);
                         }
                         
+                    }
+                    int h = rand.nextInt(255);
+                    int w = rand.nextInt(255);
+                    int rf = rand.nextInt(255);
+                    int gf = rand.nextInt(255);
+                    int bf = rand.nextInt(255);
+
+                    for(Button but: buts){
+                        if(but.clicked(mx,my)){
+                            focus_but = but;
+                            fixai = but.idx;
+                        }
+                    }
+                    if(fixai == 0){
+                        figs.add(new Rect(mx,my,w,h,rf,gf,bf,0,0,0));
+                            
+                    }
+                    else if(fixai == 1){
+                        figs.add(new Ellipse(mx,my,w,h,rf,gf,bf,0,0,0));
+                    }
+                    else if(fixai == 2){
+                        figs.add(new Triangulo(mx,my,w,h,rf,gf,bf,0,0,0));    
+                    }
+                    else if(fixai == 3){
+                        focus_but = null;
                     }
                     repaint();
                 }

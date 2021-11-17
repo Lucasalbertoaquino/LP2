@@ -11,7 +11,7 @@ public class Ellipse extends Figure {
     }
 
     public void print () {
-        System.out.format("Retangulo de tamanho (%d,%d) na posicao (%d,%d).\n",
+        System.out.format("Ellipse de tamanho (%d,%d) na posicao (%d,%d).\n",
             this.w, this.h, this.x1, this.y1);
     }
 

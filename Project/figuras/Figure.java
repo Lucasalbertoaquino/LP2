@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.lang.String;
 
 import java.awt.Graphics;
-import java.io.Serializable;
+import java.io.*;
 
 import ivisible.IVisible;
 
@@ -27,6 +27,9 @@ public abstract class Figure implements IVisible,Serializable{
         this.rl = rl;
         this.gl = gl;
         this.bl = bl;
+    }
+    public Figure(){
+        //aqui ele faz a sobrecarga
     }
 
     public abstract void paint(Graphics g,boolean focused);
