@@ -12,7 +12,7 @@ Criando figuras<br />
 <s>W ou w -> cria a estrela com a entrada das cores manual</s><br />
 <br />
 Clique no botão correspodente<br />
-**O ultimo botão retira a seleção do botão, ou seja não cria nenhuma figura por isso está vazio<br />
+**O ultimo botão retira a seleção do botão, pois ao clicar em um botão o mesmo fica no modo de criação das figuras, ao clicar no botão vazio ele não cria nenhuma figura e sai do modo adição, por isso está vazio na sua representação<br />
 <br />
 removendo figuras...<br />
 
