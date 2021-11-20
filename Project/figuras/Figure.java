@@ -28,15 +28,12 @@ public abstract class Figure implements IVisible,Serializable{
         this.gl = gl;
         this.bl = bl;
     }
-    public Figure(){
-        //aqui ele faz a sobrecarga
-    }
 
     public abstract void paint(Graphics g,boolean focused);
     public abstract void print();
     public void drag(int dx, int dy){
-        this.x1 = dx;
-        this.y1 = dy;
+        this.x1 += dx;
+        this.y1 += dy;
     }
 
     public boolean clicked(int mx, int my){

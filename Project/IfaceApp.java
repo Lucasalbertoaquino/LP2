@@ -32,6 +32,7 @@ class IfaceFrame extends JFrame{
     ArrayList<Button> buts = new ArrayList<Button>();
 
     int fixai = -1;//fixa o index 
+    boolean mutex; //verifica a area 
 
 
     IfaceFrame(){
@@ -60,10 +61,13 @@ class IfaceFrame extends JFrame{
             }
         );
 
-        buts.add(new Button(0,new Rect(40,60,30,30,0,0,0,0,0,0)));
+        buts.add(new Button(0,new Estrela(0,0,0,0,0,0,0,0,0,0)));
         buts.add(new Button(1,new Ellipse(40,60,30,30,0,0,0,0,0,0)));
         buts.add(new Button(2,new Triangulo(40,60,30,30,0,0,0,0,0,0)));
-        buts.add(new Button(3,new Lineb()));
+        buts.add(new Button(3,new Rect(40,60,30,30,0,0,0,0,0,0)));
+        buts.add(new Button(4,new Lineb(40,60,30,30,255,0,0,0,0,0)));//usar pra remover
+        buts.add(new Button(5,new Triangulo(40,60,30,30,255,255,0,0,0,0)));//usar para selecionar mouse
+        
 
 
         this.addKeyListener(
@@ -149,23 +153,27 @@ class IfaceFrame extends JFrame{
                         }
                         figs.add(new Ellipse(x,y,w,h,rf,gf,bf,rl,gl,bl));
                         teclado.nextLine();//limpa o buffer   
-                    }/*
+                    }
                     if((evt.getKeyChar() == 's')|| (evt.getKeyChar() =='S')){
                         int x = xm; //recebe a coordenada x do mouse
                         int y = ym; // recebe a coordenada y do mouse
+                        int w = rand.nextInt(50);
+                        int h = rand.nextInt(50);
                         int rf = rand.nextInt(255);//define a cor de 256 bits
                         int gf = rand.nextInt(255);
                         int bf = rand.nextInt(255);
                         int rl = 0;
                         int gl = 0;
                         int bl = 0;
-                        //figs.add(new Estrela(x,x-50,x/2,x-70,x-100,x,x+100,x+70,x+150,x+50,y,y*2,y*2,y+180,y*4,y+240,y*4,y+180,y*2,y*2,rf,gf,bf,rl,gl,bl));
-                        figs.add(new Estrela(x,x-50,x/2,x-70,x-100,x,x+100,x+70,x+150,x+50,y/3,y-100,y-100,y-20,y+100,y+40,y,y-20,y-100,y-100,rf,gf,bf,rl,gl,bl));
+                        figs.add(new Estrela(x,y,w,h,rf,gf,bf,rl,gl,bl));
                     }
+                    
                     if((evt.getKeyChar() == 'w')|| (evt.getKeyChar() =='W')){
                         System.out.printf("*****Inserir cores da Estrela manualmente*****\n");
                         int x = xm; //recebe a coordenada x do mouse
                         int y = ym; // recebe a coordenada y do mouse
+                        int w = rand.nextInt(50);
+                        int h = rand.nextInt(50);
                         System.out.printf("R: ");
                         int rf = teclado.nextInt();
                         System.out.printf("G: "); 
@@ -182,10 +190,9 @@ class IfaceFrame extends JFrame{
                             gf = 0;
                             bf = 0;
                         }
-                        //figs.add(new Estrela(x,x-50,x/2,x-70,x-100,x,x+100,x+70,x+150,x+50,y,y*2,y*2,y+180,y*4,y+240,y*4,y+180,y*2,y*2,rf,gf,bf,rl,gl,bl));
-                        figs.add(new Estrela(x,x-50,x/2,x-70,x-100,x,x+100,x+70,x+150,x+50,y/3,y-100,y-100,y-20,y+100,y+40,y,y-20,y-100,y-100,rf,gf,bf,rl,gl,bl));
+                        figs.add(new Estrela(x,y,w,h,rf,gf,bf,rl,gl,bl));
                         teclado.nextLine();//limpa o buffer
-                    }*/
+                    }
                     if((evt.getKeyChar() == 't')|| (evt.getKeyChar() == 'T')){
                         int x = xm; //recebe a coordenada x do mouse
                         int y = ym; // recebe a coordenada y do mouse
@@ -301,18 +308,27 @@ class IfaceFrame extends JFrame{
                             fixai = but.idx;
                         }
                     }
-                    if(fixai == 0){
-                        figs.add(new Rect(mx,my,w,h,rf,gf,bf,0,0,0));
-                            
+                    if((fixai == 0)&&(focus_but.clicked(mx,my)==false)){
+                        figs.add(new Estrela(mx,my,w,h,rf,gf,bf,0,0,0));
                     }
-                    else if(fixai == 1){
+                    else if((fixai == 1)&&(focus_but.clicked(mx,my)==false)){
                         figs.add(new Ellipse(mx,my,w,h,rf,gf,bf,0,0,0));
                     }
-                    else if(fixai == 2){
+                    else if((fixai == 2)&&(focus_but.clicked(mx,my)==false)){
                         figs.add(new Triangulo(mx,my,w,h,rf,gf,bf,0,0,0));    
                     }
-                    else if(fixai == 3){
-                        focus_but = null;
+                    else if((fixai == 3)&&(focus_but.clicked(mx,my)==false)){
+                        figs.add(new Rect(mx,my,w,h,rf,gf,bf,0,0,0)); 
+                    }
+                    if(focus!= null){
+                        if((fixai == 4)&&(focus_but.clicked(mx,my)==false)){
+                        figs.remove(figs.get(figs.indexOf(focus)));
+                        }
+                    }
+                    if(focus_but == null){
+                        if((fixai == 5)&&(focus_but.clicked(mx,my)==false)){
+                            focus_but = null;
+                        }
                     }
                     repaint();
                 }
@@ -323,14 +339,15 @@ class IfaceFrame extends JFrame{
         this.addMouseMotionListener(
             new MouseMotionAdapter(){
                 public void mouseDragged(MouseEvent evt){
-                    for(Figure fig: figs){
-                        int dx = evt.getX();
-                        int dy = evt.getY();
-                        if((focus != null)&&(focus == fig)){
-                            fig.drag(dx-(fig.w/2),dy-(fig.h/2));//pega no meio da figura
-                        }
+                    int dx = evt.getX();
+                    int dy = evt.getY();    
+                    if(focus != null){
+                        focus.drag(dx-xm,dy-ym);
+                        xm = dx;
+                        ym = dy;
                     }
                     repaint();
+                    
                 }
                 public void mouseMoved(MouseEvent evt){
                     focus = null;
@@ -349,11 +366,10 @@ class IfaceFrame extends JFrame{
         super.paint(g);
         for(Figure fig: this.figs){
             fig.paint(g,true);
-            fig.print();
+            //fig.print();
         }
         for(Button but: this.buts){
             but.paint(g,but == focus_but);
         }
-    
     }
 }
