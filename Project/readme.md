@@ -28,5 +28,5 @@ Alterando a cor das figuras....<br />
 
 *O programa salva em um arquivo binario a ultima execução.<br />
 <br />**Problemas conhecidos.<br />
--A figura estrela não está centralizada no botão e no momento de arrastar só é possivel clicando na parte inferior, ou seja o clique não é reconhecido em toda figura(em implementação)<br/>
+-A figura estrela não está centralizada no botão e no momento de arrastar só é possivel clicando na parte inferior, ou seja o clique não é reconhecido em toda figura(em implementação)**<br/>
 
