@@ -12,9 +12,9 @@ S ou s -> cria estrela<br />
 W ou w -> cria a estrela com a entrada das cores manual<br />
 <br />
 Clique no botão correspodente<br />
-**O botão com triangulo amarelo representa o modo seleção com mouse, ou seja, clicando nele ele para de criar as figuras e é possivel arrasta-las** <br />
+**O botão com triangulo amarelo representa o modo seleção com mouse, ou seja, clicando nele, o mesmo para de criar as figuras automaticamnete e é possivel arrasta-las** <br />
 
-<br/>removendo figuras...<br />
+<br/>removendo figuras...<br /><br />
 -clicar em cima da figura e apertar a tecla delete(del)<br />
 -clicar no botão X com a cor vermelha para remover<br/>
 
